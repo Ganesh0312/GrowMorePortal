@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "../../Components/Layout";
 import { FaTimes, FaTrash, FaInfoCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const TrainerList = () => {
   const [trainers, setTrainers] = useState([]);
@@ -20,6 +21,7 @@ const TrainerList = () => {
       setTrainers(response.data);
     } catch (error) {
       console.error("Error fetching trainers:", error);
+      console.error(error.response.data.message);
     }
   };
 
@@ -53,13 +55,21 @@ const TrainerList = () => {
               </button>
             )}
           </div>
+          <div className="flex items-center">
+            <Link
+              to="/add-trainer"
+              className="bg-pink-800 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded ml-4 inline-block"
+            >
+              Add Trainer
+            </Link>
+          </div>
         </div>
 
         <table className="w-full table-auto">
           <thead>
             <tr className="bg-yellow-200">
               <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                Employee Name
+                Trainer Name
               </th>
               <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                 Email
@@ -78,7 +88,7 @@ const TrainerList = () => {
           <tbody className="divide-y divide-gray-200">
             {trainers
               .filter((trainer) =>
-                trainer.employeeName
+                trainer.trainerName
                   .toLowerCase()
                   .includes(searchTerm.toLowerCase())
               )
@@ -88,7 +98,7 @@ const TrainerList = () => {
                   className="hover:bg-gray-50 transition-colors"
                 >
                   <td className="px-6 py-4 whitespace-nowrap">
-                    {trainer.employeeName}
+                    {trainer.trainerName}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     {trainer.email}
@@ -122,7 +132,7 @@ const TrainerList = () => {
               {new Date(selectedTrainer.joiningDate).toLocaleDateString()}
             </p>
             <p>
-              <strong>Name:</strong> {selectedTrainer.employeeName}
+              <strong>Name:</strong> {selectedTrainer.trainerName}
             </p>
             <p>
               <strong>Email:</strong> {selectedTrainer.email}

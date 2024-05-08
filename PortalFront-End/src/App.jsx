@@ -7,6 +7,8 @@ import StudentList from "./Pages/StudentPages/StudentList";
 import Fees from "./Pages/StudentPages/Fees";
 import CourcesList from "./Pages/Cources/CourcesList";
 import AdminLogin from "./Pages/LoginPages/AdminLogin";
+import StudentForm from "./Pages/StudentPages/StudentForm";
+import TrainerForm from "./Pages/TrainerPages/TrainerForm";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/student" element={<StudentList />} />
           <Route path="/fees" element={<Fees />} />
           <Route path="/cources" element={<CourcesList />} />
+          <Route path="/add-student" element={<StudentForm />} />
+          <Route path="/add-trainer" element={<TrainerForm />} />
         </Routes>
       </BrowserRouter>
     </>
