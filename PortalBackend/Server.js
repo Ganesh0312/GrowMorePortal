@@ -12,12 +12,14 @@ const TrainerRoutes = require("./Routes/TrainerRoutes");
 const StudentRoutes = require("./Routes/StudentRoutes");
 const AdminRoutes = require("./Routes/AdminRoutes");
 const CourcesRoutes = require("./Routes/CourcesRoutes");
+const PaymentsRoutes = require("./Routes/PaymentsRoutes");
 app.use(express.json());
 
 app.use("/trainer", TrainerRoutes);
 app.use("/student", StudentRoutes);
 app.use("/admin", AdminRoutes);
 app.use("/api/course", CourcesRoutes);
+app.use("/api/payments", PaymentsRoutes);
 
 port = process.env.PORT || 5000;
 app.listen(port, () => {

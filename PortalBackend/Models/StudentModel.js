@@ -17,23 +17,35 @@ const studentSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
+    // required: true,
   },
   contact: {
     type: String,
     required: true,
   },
-  address: {
+  gardianName: {
+    type: String,
+  },
+
+  gardiabcontact: {
+    type: String,
+    required: true,
+  },
+  curentAddress: {
+    type: String,
+    required: true,
+  },
+  permantAddress: {
     type: String,
     required: true,
   },
   education: {
     type: String,
-    required: true,
+    // required: true,
   },
-  course: {
+  selectedCourses: {
     type: String,
-    required: true,
+    //  required: true,
   },
   degreeResult: {
     type: Number,
@@ -44,6 +56,11 @@ const studentSchema = new mongoose.Schema({
   gender: {
     type: String,
     enum: ["Male", "Female", "Other"],
+    required: true,
+  },
+  status: {
+    type: String,
+    enum: ["Single", "Married", "Other"],
     required: true,
   },
   dateOfBirth: {

@@ -9,6 +9,9 @@ import CourcesList from "./Pages/Cources/CourcesList";
 import AdminLogin from "./Pages/LoginPages/AdminLogin";
 import StudentForm from "./Pages/StudentPages/StudentForm";
 import TrainerForm from "./Pages/TrainerPages/TrainerForm";
+import AdmissionForm from "./Pages/StudentPages/AddmissionForm";
+import CourcesForm from "./Pages/Cources/CourcesForm";
+import PaymentDetail from "./Pages/StudentPages/PaymentDetail";
 
 function App() {
   return (
@@ -23,8 +26,11 @@ function App() {
           <Route path="/student" element={<StudentList />} />
           <Route path="/fees" element={<Fees />} />
           <Route path="/cources" element={<CourcesList />} />
+          <Route path="/add-course" element={<CourcesForm />} />
           <Route path="/add-student" element={<StudentForm />} />
           <Route path="/add-trainer" element={<TrainerForm />} />
+          <Route path="/add-payment" element={<PaymentDetail />} />
+          <Route path="/addmission" element={<AdmissionForm />} />
         </Routes>
       </BrowserRouter>
     </>

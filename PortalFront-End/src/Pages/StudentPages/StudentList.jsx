@@ -133,7 +133,7 @@ const StudentList = () => {
                       {student.contact}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      {student.course}
+                      {student.selectedCourses}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       {student.education}
